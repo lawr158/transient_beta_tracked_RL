@@ -1,0 +1,16 @@
+READ ME - Last edited 06/08/2023 Yael Braverman
+
+Pre-processing matlab script living here: Z:\Public\EEG Analyses + Matlab scripts\transient beta\2023-06-06_Manuscript_1\01_Preprocessing_Inputs\tb_resting_ui_beapp.m
+
+.txt "frozen" recrod of user inputs living here: Z:\Public\EEG Analyses + Matlab scripts\transient beta\2023-06-06_Manuscript_1\01_Preprocessing_Inputs\tb_resting_ui_beapp.txt
+
+BEAPP Pre-processing input steps for transient beta analysis:
+
+1. Format as continuous baseline data
+2. Bandpass filter from 0.1 to 100 hz, notch and cleanline OFF
+3. Resample to 250 Hz
+4. Artifact detection via ICA type 2 (HAPPE), use all 10-20 channels with the following additional channels:
+	- Left S1: [FC3, CP3 , C1 , C5], Right S1: [FC4, CP4, C2 C6], Frontal: [AF3 F1 Afz AF4 F2], Posterior: [P1 P03 Poz P04 P2]
+	- For HCGSN 128, the input would be: [29 35 41 42 37 30 105 111 110 103 93 87 23 19 16 4 3 1 60 67 72 77 85]
+	- For BV 64: [39 43, 40, 41, 59, 55, 58, 57, 34, 36, 35, 63, 62, 44, 47, 49, 50, 53]
+5. Segment in 5 second segments, use happe segment rejection with artifact threshold at 40uV
