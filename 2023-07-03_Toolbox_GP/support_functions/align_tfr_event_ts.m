@@ -45,7 +45,7 @@ evt.ts_center_i_event = bounds_i_epoch(2) - bounds_i_epoch(1);
 bounds_t_epoch = bounds_i_epoch/Fs*1000;
 evt.ts_onset_i_epoch = bounds_i_epoch(1);
 evt.ts_offset_i_epoch = bounds_i_epoch(end);
-evt.ts_onset_ms = bounds_t_epoch(1); evt.ts_offset_ms = bounds_t_epoch(2);
+evt.ts_onset_ms = bounds_t_epoch(1); evt.ts_offset_ms = bounds_t_epoch(end);
 evt.ts_duration = evt.ts_offset_ms - evt.ts_onset_ms;
 %% get trough-centered time series of event
 % initialize zero-padded time series, with max possible event duration in
